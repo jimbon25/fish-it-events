@@ -121,23 +121,29 @@ function showLoginPage() {
  * Returns: String - GitHub token
  */
 function getGitHubToken() {
-    // Coba ambil dari localStorage dulu (untuk development)
+    // Coba dari localStorage dulu (development/testing)
     const tokenFromStorage = localStorage.getItem('github_token');
     if (tokenFromStorage) {
         console.log('✅ Token dari localStorage');
         return tokenFromStorage;
     }
     
-    // Untuk Vercel, token tersedia sebagai environment variable
-    // Akan di-inject saat build/deploy
-    if (typeof window !== 'undefined' && window.__ENV__ && window.__ENV__.GITHUB_TOKEN) {
-        console.log('✅ Token dari environment');
-        return window.__ENV__.GITHUB_TOKEN;
+    // Cek dari window.env (Vercel inject)
+    if (typeof window !== 'undefined' && window.env && window.env.GITHUB_TOKEN) {
+        console.log('✅ Token dari window.env (Vercel)');
+        return window.env.GITHUB_TOKEN;
+    }
+    
+    // Cek dari global config
+    if (typeof window !== 'undefined' && window.__GITHUB_TOKEN__) {
+        console.log('✅ Token dari window.__GITHUB_TOKEN__');
+        return window.__GITHUB_TOKEN__;
     }
     
     console.warn('⚠️ GitHub token tidak ditemukan!');
-    console.warn('Di Vercel: Token harus di-set di Environment Variables');
-    console.warn('Di localhost: Set localStorage.setItem("github_token", "token_anda")');
+    console.warn('Untuk testing: jalankan di console:');
+    console.warn('localStorage.setItem("github_token", "ghp_xxxxx");');
+    console.warn('location.reload();');
     return null;
 }
 
