@@ -1,0 +1,27 @@
+{
+  "name": "fish-it-roblox",
+  "version": "1.0.0",
+  "description": "Modern landing page untuk Discord server Fish It Roblox dengan admin dashboard",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Static site - no build needed'",
+    "start": "python -m http.server 8000"
+  },
+  "keywords": [
+    "landing-page",
+    "discord",
+    "roblox",
+    "github-api",
+    "vercel"
+  ],
+  "author": "Fish It Community",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/fish-it-events"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

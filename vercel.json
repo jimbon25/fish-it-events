@@ -1,0 +1,15 @@
+{
+  "buildCommand": "echo 'Static site - no build needed'",
+  "outputDirectory": "./",
+  "framework": "static",
+  "env": {
+    "GITHUB_TOKEN": "@github_token"
+  },
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/index.html",
+      "permanent": false
+    }
+  ]
+}

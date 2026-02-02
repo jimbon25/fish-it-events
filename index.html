@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish It Roblox - Discord Server</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <span class="logo">🐟 Fish It</span>
+            </div>
+            <div class="navbar-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#events" class="nav-link">Event Mingguan</a>
+                <a href="/admin.html" class="nav-link nav-admin">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">🐟 Fish It Roblox</h1>
+                <p class="hero-subtitle">Server Discord komunitas pemain Roblox yang fun dan engaging</p>
+                <p class="hero-description">
+                    Bergabunglah dengan ribuan pemain seru, ikuti event mingguan dengan hadiah menarik, 
+                    dan nikmati pengalaman gaming yang tak terlupakan!
+                </p>
+                <a href="https://discord.gg/YOUR_SERVER_ID" target="_blank" class="btn btn-primary">
+                    Join Discord Server
+                </a>
+            </div>
+            <div class="hero-image">
+                <div class="hero-icon">🎮</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="events-section">
+        <div class="container">
+            <h2 class="section-title">Event Mingguan</h2>
+            <p class="section-subtitle">Event seru setiap minggu dengan hadiah menarik!</p>
+            
+            <div class="events-grid" id="eventsContainer">
+                <!-- Events akan di-load dari JSON via JavaScript -->
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>Memuat event...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Fish It Roblox. All rights reserved.</p>
+            <p>Made with 💙 by Fish It Community</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

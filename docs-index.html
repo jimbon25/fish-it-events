@@ -1,0 +1,336 @@
+<!-- 
+  📚 DOKUMENTASI INDEX - Fish It Roblox Landing Page
+  Halaman ini adalah panduan lengkap navigasi dokumentasi project
+-->
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation Index - Fish It Roblox</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .doc-index {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .doc-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .doc-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .doc-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .doc-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--accent-primary);
+        }
+        
+        .doc-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        
+        .quick-links {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--success);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .quick-links h3 {
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+        
+        .quick-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent-primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .quick-links a:hover {
+            background: var(--accent-hover);
+        }
+        
+        .file-tree {
+            background: var(--bg-tertiary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <span class="logo">📚 Documentation</span>
+            </div>
+            <div class="navbar-menu">
+                <a href="index.html" class="nav-link">Landing Page</a>
+                <a href="admin.html" class="nav-link">Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="doc-index">
+        <h1 style="text-align: center; margin-bottom: 1rem;">📚 Dokumentasi - Fish It Roblox</h1>
+        
+        <div class="quick-links">
+            <h3>⚡ Quick Links</h3>
+            <a href="index.html">🏠 Landing Page</a>
+            <a href="admin.html">🔐 Admin Login</a>
+            <a href="README.md">📖 Full Guide</a>
+            <a href="QUICK_START.md">🚀 Quick Start</a>
+        </div>
+
+        <h2 style="margin-top: 2rem; margin-bottom: 1rem;">📂 Dokumentasi Lengkap</h2>
+
+        <div class="doc-grid">
+            <!-- README -->
+            <a href="README.md" class="doc-card" target="_blank">
+                <div class="doc-icon">📖</div>
+                <div class="doc-title">README</div>
+                <div class="doc-desc">
+                    Dokumentasi lengkap project, fitur, setup, deployment, dan troubleshooting
+                </div>
+            </a>
+
+            <!-- Quick Start -->
+            <a href="QUICK_START.md" class="doc-card" target="_blank">
+                <div class="doc-icon">⚡</div>
+                <div class="doc-title">Quick Start</div>
+                <div class="doc-desc">
+                    Setup 5 menit dari awal hingga live. Perfect untuk first-time setup
+                </div>
+            </a>
+
+            <!-- API Docs -->
+            <a href="API_DOCS.md" class="doc-card" target="_blank">
+                <div class="doc-icon">🔌</div>
+                <div class="doc-title">API Documentation</div>
+                <div class="doc-desc">
+                    Referensi lengkap GitHub REST API integration dan endpoint yang digunakan
+                </div>
+            </a>
+
+            <!-- Project Summary -->
+            <a href="PROJECT_SUMMARY.md" class="doc-card" target="_blank">
+                <div class="doc-icon">📦</div>
+                <div class="doc-title">Project Summary</div>
+                <div class="doc-desc">
+                    Ringkasan project, fitur, tech stack, dan file structure yang lengkap
+                </div>
+            </a>
+
+            <!-- Launch Checklist -->
+            <a href="LAUNCH_CHECKLIST.md" class="doc-card" target="_blank">
+                <div class="doc-icon">✅</div>
+                <div class="doc-title">Launch Checklist</div>
+                <div class="doc-desc">
+                    Pre-launch checklist untuk memastikan semua siap sebelum go-live
+                </div>
+            </a>
+
+            <!-- Setup Guide -->
+            <a href="SETUP.html" class="doc-card">
+                <div class="doc-icon">🔧</div>
+                <div class="doc-title">Interactive Setup</div>
+                <div class="doc-desc">
+                    Step-by-step setup guide dalam format interaktif yang mudah diikuti
+                </div>
+            </a>
+        </div>
+
+        <h2 style="margin-top: 3rem; margin-bottom: 1rem;">📁 File Structure</h2>
+        
+        <div class="file-tree">
+<pre>
+/fish-it-events
+├── 📄 index.html              # Landing page utama
+├── 📄 admin.html              # Admin dashboard
+├── 🎨 styles.css              # CSS global (dark mode)
+├── 📜 script.js               # Landing page JavaScript
+├── 📜 admin.js                # Admin dashboard JavaScript
+├── 📋 events.json             # Data events (GitHub)
+├── 📖 README.md               # Full documentation
+├── ⚡ QUICK_START.md          # 5-minute setup guide
+├── 🔌 API_DOCS.md             # GitHub API reference
+├── 📦 PROJECT_SUMMARY.md      # Project overview
+├── ✅ LAUNCH_CHECKLIST.md     # Pre-launch checklist
+├── 🔧 SETUP.html              # Interactive setup guide
+├── 🔑 .env.example            # Environment variables
+├── 📋 .gitignore              # Git ignore rules
+├── 📦 package.json            # Project metadata
+├── ⚙️ vercel.json             # Vercel configuration
+└── 🔧 setup.sh                # Quick setup script
+</pre>
+        </div>
+
+        <h2 style="margin-top: 3rem; margin-bottom: 1rem;">🎯 Dokumentasi Berdasarkan Role</h2>
+
+        <div class="doc-grid">
+            <!-- Developer -->
+            <div class="doc-card" style="cursor: default;">
+                <div class="doc-icon">👨‍💻</div>
+                <div class="doc-title">Untuk Developer</div>
+                <div class="doc-desc">
+                    <strong>Baca:</strong><br>
+                    1. README.md<br>
+                    2. API_DOCS.md<br>
+                    3. PROJECT_SUMMARY.md<br><br>
+                    <strong>Setup:</strong> QUICK_START.md
+                </div>
+            </div>
+
+            <!-- DevOps -->
+            <div class="doc-card" style="cursor: default;">
+                <div class="doc-icon">🚀</div>
+                <div class="doc-title">Untuk DevOps/Admin</div>
+                <div class="doc-desc">
+                    <strong>Baca:</strong><br>
+                    1. QUICK_START.md<br>
+                    2. SETUP.html<br>
+                    3. LAUNCH_CHECKLIST.md<br><br>
+                    <strong>Deploy:</strong> Vercel setup
+                </div>
+            </div>
+
+            <!-- User/Content Manager -->
+            <div class="doc-card" style="cursor: default;">
+                <div class="doc-icon">📝</div>
+                <div class="doc-title">Untuk Content Manager</div>
+                <div class="doc-desc">
+                    <strong>Akses:</strong> /admin.html<br>
+                    <strong>Password:</strong> fishit2026<br><br>
+                    <strong>Fungsi:</strong><br>
+                    - Create event<br>
+                    - Delete event<br>
+                    - Manage prizes
+                </div>
+            </div>
+
+            <!-- First Time User -->
+            <div class="doc-card" style="cursor: default;">
+                <div class="doc-icon">🆕</div>
+                <div class="doc-title">Pertama Kali Setup?</div>
+                <div class="doc-desc">
+                    <strong>Follow ini:</strong><br>
+                    1. QUICK_START.md<br>
+                    2. SETUP.html<br>
+                    3. Test di localhost<br>
+                    4. Deploy ke Vercel<br>
+                    5. Go live! 🎉
+                </div>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 3rem; margin-bottom: 1rem;">🔍 Topik Spesifik</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+            <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                <strong>GitHub Setup</strong><br>
+                <a href="QUICK_START.md" style="color: var(--accent-primary);">Step 1 di QUICK_START.md</a>
+            </div>
+            
+            <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                <strong>Deploy ke Vercel</strong><br>
+                <a href="QUICK_START.md" style="color: var(--accent-primary);">Step 4 di QUICK_START.md</a>
+            </div>
+            
+            <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                <strong>GitHub API Integration</strong><br>
+                <a href="API_DOCS.md" style="color: var(--accent-primary);">API_DOCS.md</a>
+            </div>
+            
+            <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                <strong>Troubleshooting</strong><br>
+                <a href="README.md" style="color: var(--accent-primary);">Troubleshooting Section di README</a>
+            </div>
+            
+            <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                <strong>Admin Dashboard</strong><br>
+                <a href="admin.html" style="color: var(--accent-primary);">Try Admin</a> (pwd: fishit2026)
+            </div>
+            
+            <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+                <strong>Kustomisasi</strong><br>
+                Edit colors di <code>styles.css</code> (line 13-20)
+            </div>
+        </div>
+
+        <h2 style="margin-top: 3rem; margin-bottom: 1rem;">💾 File Penting</h2>
+
+        <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+            <div style="margin-bottom: 1rem;">
+                <strong style="color: var(--warning);">⚠️ JANGAN COMMIT KE GIT:</strong><br>
+                <code>.env.local</code> atau file berisi GitHub token
+            </div>
+            
+            <div style="margin-bottom: 1rem;">
+                <strong style="color: var(--success);">✅ COMMIT KE GIT:</strong><br>
+                <code>.env.example</code>, HTML, CSS, JS, JSON
+            </div>
+            
+            <div>
+                <strong style="color: var(--accent-primary);">🔑 PENTING DISIMPAN:</strong><br>
+                GitHub token - simpan aman & jangan share!
+            </div>
+        </div>
+
+        <div style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); padding: 2rem; border-radius: 8px; text-align: center; color: white;">
+            <h3 style="margin-top: 0; color: white;">🚀 Ready to Launch?</h3>
+            <p>Follow QUICK_START.md untuk setup cepat dalam 5 menit!</p>
+            <a href="QUICK_START.md" target="_blank" style="display: inline-block; background: white; color: var(--accent-primary); padding: 0.75rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; margin-top: 1rem;">
+                📖 Open Quick Start Guide
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Fish It Roblox. Documentation Index</p>
+            <p>📚 Semua dokumentasi tersedia dalam Markdown format</p>
+        </div>
+    </footer>
+</body>
+</html>

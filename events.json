@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "🎣 Fishing Competition",
+    "date": "2026-02-08",
+    "description": "Kompetisi fishing terbesar bulan ini! Kumpulkan ikan sebanyak mungkin dan menangkan hadiah besar. Event berlangsung selama 24 jam.",
+    "reward": "1st Place: 500 Robux\n2nd Place: 300 Robux\n3rd Place: 100 Robux\nParticipation: 50 Robux"
+  },
+  {
+    "id": 2,
+    "title": "🎯 Treasure Hunt",
+    "date": "2026-02-15",
+    "description": "Cari harta karun yang tersembunyi di seluruh peta. Petunjuk akan diberikan saat event dimulai. Pemberian koin setiap menemukan harta karun.",
+    "reward": "Top 5 Winners: 200 Robux each\nTop 10: 100 Robux each\nParticipation: 50 Robux"
+  },
+  {
+    "id": 3,
+    "title": "⚡ Speed Racing Challenge",
+    "date": "2026-02-22",
+    "description": "Balapan kecepatan seru dengan lintasan yang menantang. Siapa yang tercepat adalah juaranya! Ada berbagai level kesulitan.",
+    "reward": "1st Place: 400 Robux\n2nd Place: 250 Robux\n3rd Place: 150 Robux\nAll Participants: 75 Robux"
+  },
+  {
+    "id": 4,
+    "title": "🏆 Build Battle",
+    "date": "2026-03-01",
+    "description": "Kompetisi membangun struktur terbaik dengan tema yang ditentukan. Pemenang dipilih oleh komunitas melalui voting.",
+    "reward": "1st Place: 450 Robux\n2nd Place: 280 Robux\n3rd Place: 120 Robux\nAll Participants: 60 Robux"
+  }
+]

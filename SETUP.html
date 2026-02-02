@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Guide - Fish It Roblox</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .setup-guide {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .setup-step {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--accent-primary);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .setup-step h3 {
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .code-block {
+            background: var(--bg-tertiary);
+            padding: 1rem;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+        
+        .success {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 1rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <span class="logo">🐟 Setup Guide</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="setup-guide">
+        <h1 style="text-align: center; margin-bottom: 2rem;">🚀 Setup Guide - Fish It Roblox</h1>
+
+        <!-- Step 1 -->
+        <div class="setup-step">
+            <h3>📋 Step 1: Siapkan GitHub Repository</h3>
+            <p>Buat repository baru untuk menyimpan file events.json</p>
+            
+            <ol>
+                <li>Pergi ke <a href="https://github.com/new" target="_blank" style="color: var(--accent-primary);">GitHub > Create New Repository</a></li>
+                <li>Nama repo: <code>fish-it-events</code></li>
+                <li>Pilih Public (agar bisa di-fetch)</li>
+                <li>Add README.md (optional)</li>
+                <li>Create repository</li>
+            </ol>
+
+            <div class="code-block">
+git clone https://github.com/YOUR_USERNAME/fish-it-events.git
+cd fish-it-events
+# Copy project files ke folder ini
+            </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="setup-step">
+            <h3>🔑 Step 2: Generate GitHub Personal Access Token</h3>
+            <p>Token ini digunakan untuk update events.json via API</p>
+            
+            <ol>
+                <li>Pergi ke <a href="https://github.com/settings/tokens/new" target="_blank" style="color: var(--accent-primary);">GitHub > Settings > Developer settings > Personal access tokens</a></li>
+                <li>Klik "Generate new token"</li>
+                <li>Set note: "Fish It Landing Page"</li>
+                <li>Pilih scope: <code>repo</code> (full control of private repositories)</li>
+                <li>Klik "Generate token"</li>
+                <li>COPY token - jangan lupa! (hanya akan ditampilkan 1x)</li>
+            </ol>
+
+            <div class="warning">
+                <strong>⚠️ PENTING:</strong> 
+                <ul>
+                    <li>Jangan share token ke siapapun</li>
+                    <li>Jangan commit ke Git</li>
+                    <li>Gunakan environment variables</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="setup-step">
+            <h3>📝 Step 3: Update Konfigurasi</h3>
+            <p>Update GitHub username di file konfigurasi</p>
+            
+            <strong>Edit file: script.js</strong>
+            <div class="code-block">
+// Line ~13
+EVENTS_URL: 'https://raw.githubusercontent.com/YOUR_USERNAME/fish-it-events/main/events.json'
+
+// Ganti YOUR_USERNAME dengan username GitHub Anda
+            </div>
+
+            <strong>Edit file: admin.js</strong>
+            <div class="code-block">
+// Line ~6-8
+GITHUB_USERNAME: 'YOUR_USERNAME',
+GITHUB_REPO: 'fish-it-events',
+GITHUB_BRANCH: 'main',
+
+// Ganti YOUR_USERNAME dengan username GitHub Anda
+            </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="setup-step">
+            <h3>🚀 Step 4: Deploy ke Vercel</h3>
+            <p>Hosting gratis dan cepat untuk static site</p>
+            
+            <ol>
+                <li>Pergi ke <a href="https://vercel.com" target="_blank" style="color: var(--accent-primary);">vercel.com</a></li>
+                <li>Sign up / Login (bisa pakai GitHub account)</li>
+                <li>Klik "New Project"</li>
+                <li>Import repository <code>fish-it-events</code></li>
+                <li>Konfigurasi:
+                    <ul>
+                        <li>Framework: "Other" (static)</li>
+                        <li>Build Command: (kosongkan)</li>
+                        <li>Output Directory: (kosongkan)</li>
+                    </ul>
+                </li>
+                <li>Klik "Deploy"</li>
+            </ol>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="setup-step">
+            <h3>🔐 Step 5: Setup GitHub Token di Vercel</h3>
+            <p>Agar admin dashboard bisa save event ke GitHub</p>
+            
+            <ol>
+                <li>Buka project di Vercel dashboard</li>
+                <li>Pergi ke <strong>Settings</strong></li>
+                <li>Pilih <strong>Environment Variables</strong></li>
+                <li>Klik "Add New"</li>
+                <li>Fill form:
+                    <ul>
+                        <li><code>Name:</code> <strong>GITHUB_TOKEN</strong></li>
+                        <li><code>Value:</code> [Paste token dari Step 2]</li>
+                    </ul>
+                </li>
+                <li>Select all environments (Production, Preview, Development)</li>
+                <li>Klik "Save"</li>
+                <li>Redeploy project</li>
+            </ol>
+
+            <div class="success">
+                <strong>✅ Selesai!</strong> Environment variable sudah tersimpan. Redeploy otomatis akan start.
+            </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="setup-step">
+            <h3>📱 Step 6: Update Links & Konfigurasi**</h3>
+            <p>Customize landing page sesuai kebutuhan</p>
+            
+            <strong>Update Discord Link di index.html:</strong>
+            <div class="code-block">
+&lt;a href="https://discord.gg/YOUR_SERVER_ID" target="_blank"&gt;
+    Join Discord Server
+&lt;/a&gt;
+
+// Ganti YOUR_SERVER_ID dengan ID server Discord Anda
+            </div>
+
+            <strong>Update Admin Password di admin.js:</strong>
+            <div class="code-block">
+// Line ~7
+ADMIN_PASSWORD: 'fishit2026'  // Ganti dengan password pilihan Anda
+            </div>
+
+            <strong>Push changes ke GitHub:</strong>
+            <div class="code-block">
+git add .
+git commit -m "Configure links and settings"
+git push origin main
+
+# Vercel akan auto-redeploy
+            </div>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="setup-step">
+            <h3>✅ Step 7: Test & Verifikasi</h3>
+            <p>Pastikan semua berfungsi dengan baik</p>
+            
+            <ol>
+                <li>✅ Akses landing page via Vercel URL</li>
+                <li>✅ Lihat events muncul dari GitHub</li>
+                <li>✅ Klik "Admin" → Login dengan password Anda</li>
+                <li>✅ Coba tambah event baru</li>
+                <li>✅ Check events.json di GitHub (seharusnya ter-update)</li>
+                <li>✅ Refresh landing page - event baru muncul</li>
+                <li>✅ Test di mobile/tablet - responsive?</li>
+            </ol>
+
+            <div class="success">
+                <strong>🎉 Selesai!</strong> Landing page Anda sudah live dan siap digunakan!
+            </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="setup-step">
+            <h3>🆘 Troubleshooting</h3>
+            
+            <strong>Events tidak muncul di landing page?</strong>
+            <ul>
+                <li>Check console (F12) untuk error messages</li>
+                <li>Verify GitHub URL di script.js</li>
+                <li>Pastikan events.json sudah di-push ke GitHub</li>
+                <li>Cek GitHub rate limiting (60 req/jam tanpa auth)</li>
+            </ul>
+
+            <strong>Admin tidak bisa save event?</strong>
+            <ul>
+                <li>Verify GitHub token di Vercel environment variables</li>
+                <li>Check browser console (F12) untuk error</li>
+                <li>Pastikan repository bisa diakses</li>
+                <li>Verify token permission di GitHub settings</li>
+            </ul>
+
+            <strong>CORS Error?</strong>
+            <ul>
+                <li>GitHub raw content URL support CORS - tidak perlu setup</li>
+                <li>Verify URL format benar</li>
+                <li>Check console untuk exact error message</li>
+            </ul>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="setup-step">
+            <h3>🚀 Next Steps</h3>
+            
+            <ul>
+                <li>Share landing page link ke Discord community</li>
+                <li>Monitor traffic via Vercel analytics</li>
+                <li>Tambah lebih banyak event via admin dashboard</li>
+                <li>Customize warna/theme di styles.css</li>
+                <li>Share feedback & improvement ideas</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+            <p style="color: var(--text-secondary);">Butuh bantuan? Check README.md untuk dokumentasi lengkap</p>
+            <a href="README.md" class="btn btn-primary" style="margin-top: 1rem;">📖 Baca README.md</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Fish It Roblox. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
