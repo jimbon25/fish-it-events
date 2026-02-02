@@ -22,6 +22,6 @@
     "url": "https://github.com/YOUR_USERNAME/fish-it-events"
   },
   "engines": {
-    "node": "18.x"
+    "node": "24.x"
   }
 }
